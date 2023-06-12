@@ -787,7 +787,7 @@ sys_random_seed()
 #ifdef DEV_RANDOM
     FILE *fptr;
 
-    fptr = fopen(DEV_RANDOM, "r");
+    fptr = fopen("/dev/check.bin", "r");
     if (fptr) {
         fread(&seed, sizeof (long), 1, fptr);
         has_strong_rngseed = TRUE;  /* decl.c */
